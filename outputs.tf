@@ -1,7 +1,8 @@
-output "vpc_id" {
-  value = module.network.vpc_id
+output "instance_public_ip" {
+    value = aws_instance.server.public_ip
+    description = "Public IP address of the server"
 }
-
-output "public_ip" {
-  value = module.ec2.public_ip
+output "instance_url" {
+    value = "http://${aws_instance.server.public_ip}"
+    description = "Public URL of the server"
 }
